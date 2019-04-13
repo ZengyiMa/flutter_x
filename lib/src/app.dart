@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart' as Material;
 
 class App extends StatelessWidget {
-  const App({Key key, this.title, this.widget}) : super(key: key);
+  const App({Key key, this.widget}) : super(key: key);
 
-  final String title;
   final Widget widget;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: title,
+    return Material.MaterialApp(
       home: widget,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: Material.ThemeData(
+        primarySwatch: Material.Colors.blue,
       ),
     );
   }
