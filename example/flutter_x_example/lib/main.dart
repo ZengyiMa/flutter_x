@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      title: "Flutter-x Demo",
+      title: "Flutter-x example",
     );
   }
 }
