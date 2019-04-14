@@ -2,11 +2,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart' as Material;
 import 'package:flutter/cupertino.dart' as Cupertino;
 import 'dart:io';
+import 'app_theme.dart';
+
+
 
 class App extends StatelessWidget {
-  const App({Key key, this.widget}) : super(key: key);
+  const App({Key key, this.widget, this.theme}) : super(key: key);
 
   final Widget widget;
+  final AppTheme theme;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +18,24 @@ class App extends StatelessWidget {
       return Material.MaterialApp(
         home: widget,
         theme: Material.ThemeData(
-          primarySwatch: Material.Colors.blue,
+          primaryColor: theme.primaryColor,
+          appBarTheme: Material.AppBarTheme(
+            color: theme.navigationBarBackgroundColor,
+            textTheme: Material.TextTheme(
+              title: theme.titleStyle
+            )
+          )
         ),
       );
     } else if (Platform.isIOS) {
       return Cupertino.CupertinoApp(
         home: widget,
         theme: Cupertino.CupertinoThemeData(
-          primaryColor: Material.Colors.blue,
+          primaryColor: theme.primaryColor,
+          barBackgroundColor: theme.navigationBarBackgroundColor,
+          textTheme: Cupertino.CupertinoTextThemeData(
+            navTitleTextStyle: theme.titleStyle
+          )
         ),
       );
     } else {

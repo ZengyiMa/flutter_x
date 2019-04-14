@@ -1,4 +1,5 @@
 import 'package:flutter_x/flutter_x.dart';
+import 'package:flutter/material.dart' as Material;
 
 void main() => runApp(MyApp());
 
@@ -8,6 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return App(
       widget: MyHomePage(),
+      theme: AppTheme(
+        navigationBarBackgroundColor: Material.Colors.blue,
+        titleStyle: TextStyle(
+          color: Material.Colors.yellow
+        )
+      ),
     );
   }
 }
