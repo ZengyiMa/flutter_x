@@ -1,39 +1,37 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter/material.dart' as Material;
-import 'package:flutter/cupertino.dart' as Cupertino;
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'dart:io';
 import 'app_theme.dart';
 
-
-
-class App extends StatelessWidget {
-  const App({Key key, this.widget, this.theme}) : super(key: key);
+class FXApp extends StatelessWidget {
+  const FXApp({Key key, this.widget, this.theme}) : super(key: key);
 
   final Widget widget;
-  final AppTheme theme;
+  final FXAppTheme theme;
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return Material.MaterialApp(
+      return MaterialApp(
         home: widget,
-        theme: Material.ThemeData(
+        theme: ThemeData(
           primaryColor: theme.primaryColor,
-          appBarTheme: Material.AppBarTheme(
+          appBarTheme: AppBarTheme(
             color: theme.navigationBarBackgroundColor,
-            textTheme: Material.TextTheme(
+            textTheme: TextTheme(
               title: theme.titleStyle
             )
           )
         ),
       );
     } else if (Platform.isIOS) {
-      return Cupertino.CupertinoApp(
+      return CupertinoApp(
         home: widget,
-        theme: Cupertino.CupertinoThemeData(
+        theme: CupertinoThemeData(
           primaryColor: theme.primaryColor,
           barBackgroundColor: theme.navigationBarBackgroundColor,
-          textTheme: Cupertino.CupertinoTextThemeData(
+          textTheme: CupertinoTextThemeData(
             navTitleTextStyle: theme.titleStyle
           )
         ),
