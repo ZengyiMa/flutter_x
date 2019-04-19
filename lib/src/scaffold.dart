@@ -5,20 +5,22 @@ import 'navigationbar.dart';
 import 'dart:io';
 
 class FXScaffold extends StatelessWidget {
-  const FXScaffold({Key key, this.navigationBar}) : super(key: key);
+  const FXScaffold({Key key, this.navigationBar, this.content}) : super(key: key);
 
   final FXNavigationBar navigationBar;
+  final Widget content;
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
       return Scaffold(
-          appBar: navigationBar.build(context)
+          appBar: navigationBar.build(context),
+          body: content,
           );
     } else if (Platform.isIOS) {
       return CupertinoPageScaffold(
         navigationBar: navigationBar.build(context),
-        child: Container(),
+        child: content,
       );
     } else {
       return null;
