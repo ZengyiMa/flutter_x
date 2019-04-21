@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FXApp(
       widget: HomePage(),
+      style: FXAppStyle.auto,
       routes: {"navigation_example": (context) => new NavigationExample()},
     );
   }
