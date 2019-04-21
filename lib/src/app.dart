@@ -4,37 +4,38 @@ import 'dart:io';
 import 'app_theme.dart';
 
 class FXApp extends StatelessWidget {
-  const FXApp({Key key, this.widget, this.theme}) : super(key: key);
+  const FXApp({Key key, this.widget, this.theme, this.routes})
+      : super(key: key);
 
   final Widget widget;
   final FXAppTheme theme;
 
+  final Map<String, WidgetBuilder> routes;
+
   @override
   Widget build(BuildContext context) {
-    var themeData;
     if (Platform.isAndroid) {
-      if (this.theme != null) {
-        // Android ThemeData
-        themeData = ThemeData(
-            primaryColor: theme.primaryColor,
-            appBarTheme: AppBarTheme(
-                color: theme.navigationBarBackgroundColor,
-                textTheme: TextTheme(title: theme.titleStyle)));
-      }
-      return MaterialApp(home: widget, theme: themeData);
+      return MaterialApp(
+          home: widget,
+          theme: theme == null
+              ? null
+              : ThemeData(
+                  primaryColor: theme.primaryColor,
+                  appBarTheme: AppBarTheme(
+                      color: theme.navigationBarBackgroundColor,
+                      textTheme: TextTheme(title: theme.titleStyle))),
+          routes: routes);
     } else if (Platform.isIOS) {
-      if (this.theme != null) {
-        // iOS ThemeData
-        themeData = CupertinoThemeData(
-            primaryColor: theme.primaryColor,
-            barBackgroundColor: theme.navigationBarBackgroundColor,
-            textTheme:
-                CupertinoTextThemeData(navTitleTextStyle: theme.titleStyle));
-      }
       return CupertinoApp(
-        home: widget,
-        theme: themeData,
-      );
+          home: widget,
+          theme: theme == null
+              ? null
+              : CupertinoThemeData(
+                  primaryColor: theme.primaryColor,
+                  barBackgroundColor: theme.navigationBarBackgroundColor,
+                  textTheme: CupertinoTextThemeData(
+                      navTitleTextStyle: theme.titleStyle)),
+          routes: routes);
     } else {
       return null;
     }
