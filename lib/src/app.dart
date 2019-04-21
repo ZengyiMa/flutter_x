@@ -1,43 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'dart:io';
 import 'app_theme.dart';
+import 'platform.dart';
 
-class FXApp extends StatelessWidget {
-  const FXApp({Key key, this.widget, this.theme, this.routes})
-      : super(key: key);
+class FXApp extends StatefulWidget {
+   FXApp({Key key, this.widget, this.theme, this.routes, this.style = FXAppStyle.auto})
+      : super(key: key) {
+        FXPlatform.appStyle = style;
+      }
 
   final Widget widget;
   final FXAppTheme theme;
-
   final Map<String, WidgetBuilder> routes;
+  final FXAppStyle style;
 
   @override
+  _FXAppState createState() {
+    return _FXAppState();
+  }
+}
+
+class _FXAppState extends State<FXApp> {
+  @override
   Widget build(BuildContext context) {
-    if (Platform.isAndroid) {
+    if (FXPlatform.style() == FXAppStyle.material) {
       return MaterialApp(
-          home: widget,
-          theme: theme == null
+          home: this.widget.widget,
+          theme: this.widget.theme == null
               ? null
               : ThemeData(
-                  primaryColor: theme.primaryColor,
+                  primaryColor: this.widget.theme.primaryColor,
                   appBarTheme: AppBarTheme(
-                      color: theme.navigationBarBackgroundColor,
-                      textTheme: TextTheme(title: theme.titleStyle))),
-          routes: routes);
-    } else if (Platform.isIOS) {
+                      color: this.widget.theme.navigationBarBackgroundColor,
+                      textTheme: TextTheme(title: this.widget.theme.titleStyle))),
+          routes: this.widget.routes);
+    } else if (FXPlatform.style() == FXAppStyle.cupertino) {
       return CupertinoApp(
-          home: widget,
-          theme: theme == null
+          home: this.widget.widget,
+          theme: this.widget.theme == null
               ? null
               : CupertinoThemeData(
-                  primaryColor: theme.primaryColor,
-                  barBackgroundColor: theme.navigationBarBackgroundColor,
+                  primaryColor: this.widget.theme.primaryColor,
+                  barBackgroundColor: this.widget.theme.navigationBarBackgroundColor,
                   textTheme: CupertinoTextThemeData(
-                      navTitleTextStyle: theme.titleStyle)),
-          routes: routes);
+                      navTitleTextStyle: this.widget.theme.titleStyle)),
+          routes: this.widget.routes);
     } else {
       return null;
     }
   }
+  
 }

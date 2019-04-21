@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'dart:io';
+import 'platform.dart';
 
 class FXNavigationBar extends StatelessWidget {
   const FXNavigationBar({Key key, this.title}) : super(key: key);
@@ -9,11 +9,11 @@ class FXNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     if (Platform.isAndroid) {
+     if (FXPlatform.style() == FXAppStyle.material) {
       return AppBar(
         title: Text(this.title)
       );
-    } else if (Platform.isIOS) {
+    } else if (FXPlatform.style() == FXAppStyle.cupertino) {
       return CupertinoNavigationBar(
           middle: Text(this.title),
         );
