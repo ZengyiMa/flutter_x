@@ -4,10 +4,15 @@ import 'app_theme.dart';
 import 'platform.dart';
 
 class FXApp extends StatefulWidget {
-   FXApp({Key key, this.widget, this.theme, this.routes, this.style = FXAppStyle.auto})
+  FXApp(
+      {Key key,
+      this.widget,
+      this.theme,
+      this.routes,
+      this.style = FXAppStyle.auto})
       : super(key: key) {
-        FXPlatform.appStyle = style;
-      }
+    FXPlatform.appStyle = style;
+  }
 
   final Widget widget;
   final FXAppTheme theme;
@@ -28,26 +33,31 @@ class _FXAppState extends State<FXApp> {
           home: this.widget.widget,
           theme: this.widget.theme == null
               ? null
-              : ThemeData(
-                  primaryColor: this.widget.theme.primaryColor,
-                  appBarTheme: AppBarTheme(
-                      color: this.widget.theme.navigationBarBackgroundColor,
-                      textTheme: TextTheme(title: this.widget.theme.titleStyle))),
+              : this.widget.theme.materialThemeData == null
+                  ? ThemeData(
+                      primaryColor: this.widget.theme.primaryColor,
+                      appBarTheme: AppBarTheme(
+                          color: this.widget.theme.navigationBarBackgroundColor,
+                          textTheme:
+                              TextTheme(title: this.widget.theme.titleStyle)))
+                  : this.widget.theme.materialThemeData,
           routes: this.widget.routes);
     } else if (FXPlatform.style() == FXAppStyle.cupertino) {
       return CupertinoApp(
           home: this.widget.widget,
           theme: this.widget.theme == null
               ? null
-              : CupertinoThemeData(
-                  primaryColor: this.widget.theme.primaryColor,
-                  barBackgroundColor: this.widget.theme.navigationBarBackgroundColor,
-                  textTheme: CupertinoTextThemeData(
-                      navTitleTextStyle: this.widget.theme.titleStyle)),
+              : this.widget.theme.cupertinoThemeData == null
+                  ? CupertinoThemeData(
+                      primaryColor: this.widget.theme.primaryColor,
+                      barBackgroundColor:
+                          this.widget.theme.navigationBarBackgroundColor,
+                      textTheme: CupertinoTextThemeData(
+                          navTitleTextStyle: this.widget.theme.titleStyle))
+                  : this.widget.theme.cupertinoThemeData,
           routes: this.widget.routes);
     } else {
       return null;
     }
   }
-  
 }

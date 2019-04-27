@@ -1,4 +1,3 @@
-
 import 'package:flutter_x/flutter_x.dart';
 
 class NavigationExample extends StatelessWidget {
