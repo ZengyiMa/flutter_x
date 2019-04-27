@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'platform.dart';
 
+const Color _kDefaultNavBarBorderColor = Color(0x4C000000);
+
+const Border _kDefaultNavBarBorder = Border(
+  bottom: BorderSide(
+    color: _kDefaultNavBarBorderColor,
+    width: 0.0, // One physical pixel.
+    style: BorderStyle.solid,
+  ),
+);
+
 class FXNavigationBar extends StatelessWidget {
   const FXNavigationBar(
       {Key key,
@@ -28,7 +38,7 @@ class FXNavigationBar extends StatelessWidget {
         actions: this.actions,
         leading: leading,
         backgroundColor: this.backgroundColor,
-        elevation: hiddenBottomEffect == false ? 0 : null,
+        elevation: hiddenBottomEffect == true ? 0 : null,
       );
     } else if (FXPlatform.style() == FXAppStyle.cupertino) {
       return CupertinoNavigationBar(
@@ -41,7 +51,7 @@ class FXNavigationBar extends StatelessWidget {
             : null,
         leading: this.leading,
         backgroundColor: this.backgroundColor,
-        border: hiddenBottomEffect == false ? null : Border(bottom: null),
+        border: hiddenBottomEffect == true ? null : _kDefaultNavBarBorder,
       );
     } else {
       return null;
