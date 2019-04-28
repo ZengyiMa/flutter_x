@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'platform.dart';
+import 'base_platform_stateless_widget.dart';
 
 const Color _kDefaultNavBarBorderColor = Color(0x4C000000);
 
@@ -12,7 +12,7 @@ const Border _kDefaultNavBarBorder = Border(
   ),
 );
 
-class FXNavigationBar extends StatelessWidget {
+class FXNavigationBar extends BasePlatformStatelessWidget {
   const FXNavigationBar(
       {Key key,
       this.title,
@@ -31,30 +31,29 @@ class FXNavigationBar extends StatelessWidget {
   final bool hiddenBottomEffect;
 
   @override
-  Widget build(BuildContext context) {
-    if (FXPlatform.style() == FXAppStyle.material) {
-      return AppBar(
-        title: Text(this.title, style: this.titleTextStyle),
-        actions: this.actions,
-        leading: leading,
-        backgroundColor: this.backgroundColor,
-        elevation: hiddenBottomEffect == true ? 0 : null,
-      );
-    } else if (FXPlatform.style() == FXAppStyle.cupertino) {
-      return CupertinoNavigationBar(
-        middle: Text(this.title, style: this.titleTextStyle),
-        trailing: this.actions != null
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: this.actions,
-              )
-            : null,
-        leading: this.leading,
-        backgroundColor: this.backgroundColor,
-        border: hiddenBottomEffect == true ? null : _kDefaultNavBarBorder,
-      );
-    } else {
-      return null;
-    }
+  Widget materialStyleWidget(BuildContext context) {
+    return AppBar(
+      title: Text(this.title, style: this.titleTextStyle),
+      actions: this.actions,
+      leading: leading,
+      backgroundColor: this.backgroundColor,
+      elevation: hiddenBottomEffect == true ? 0 : null,
+    );
+  }
+
+  @override
+  Widget cupertinoStyleWidget(BuildContext context) {
+    return CupertinoNavigationBar(
+      middle: Text(this.title, style: this.titleTextStyle),
+      trailing: this.actions != null
+          ? Row(
+              mainAxisSize: MainAxisSize.min,
+              children: this.actions,
+            )
+          : null,
+      leading: this.leading,
+      backgroundColor: this.backgroundColor,
+      border: hiddenBottomEffect == true ? null : _kDefaultNavBarBorder,
+    );
   }
 }
