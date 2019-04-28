@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'navigationbar.dart';
-import 'platform.dart';
 import 'base_platform_stateless_widget.dart';
 
 class FXScaffold extends BasePlatformStatelessWidget {
