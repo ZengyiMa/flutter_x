@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'app_theme.dart';
 import 'platform.dart';
+import 'base_platform_stateless_widget.dart';
 
-class FXApp extends StatefulWidget {
+class FXApp extends BasePlatformStatelessWidget {
   FXApp(
       {Key key,
       this.widget,
@@ -20,44 +21,35 @@ class FXApp extends StatefulWidget {
   final FXAppStyle style;
 
   @override
-  _FXAppState createState() {
-    return _FXAppState();
+  Widget materialStyleWidget(BuildContext context) {
+    return MaterialApp(
+        home: this.widget,
+        theme: this.theme == null
+            ? null
+            : this.theme.materialThemeData == null
+                ? ThemeData(
+                    primaryColor: this.theme.primaryColor,
+                    appBarTheme: AppBarTheme(
+                        color: this.theme.navigationBarBackgroundColor,
+                        textTheme:
+                            TextTheme(title: this.theme.titleStyle)))
+                : this.theme.materialThemeData,
+        routes: this.routes);
   }
-}
 
-class _FXAppState extends State<FXApp> {
   @override
-  Widget build(BuildContext context) {
-    if (FXPlatform.style() == FXAppStyle.material) {
-      return MaterialApp(
-          home: this.widget.widget,
-          theme: this.widget.theme == null
-              ? null
-              : this.widget.theme.materialThemeData == null
-                  ? ThemeData(
-                      primaryColor: this.widget.theme.primaryColor,
-                      appBarTheme: AppBarTheme(
-                          color: this.widget.theme.navigationBarBackgroundColor,
-                          textTheme:
-                              TextTheme(title: this.widget.theme.titleStyle)))
-                  : this.widget.theme.materialThemeData,
-          routes: this.widget.routes);
-    } else if (FXPlatform.style() == FXAppStyle.cupertino) {
-      return CupertinoApp(
-          home: this.widget.widget,
-          theme: this.widget.theme == null
-              ? null
-              : this.widget.theme.cupertinoThemeData == null
-                  ? CupertinoThemeData(
-                      primaryColor: this.widget.theme.primaryColor,
-                      barBackgroundColor:
-                          this.widget.theme.navigationBarBackgroundColor,
-                      textTheme: CupertinoTextThemeData(
-                          navTitleTextStyle: this.widget.theme.titleStyle))
-                  : this.widget.theme.cupertinoThemeData,
-          routes: this.widget.routes);
-    } else {
-      return null;
-    }
+  Widget cupertinoStyleWidget(BuildContext context) {
+    return CupertinoApp(
+        home: this.widget,
+        theme: this.theme == null
+            ? null
+            : this.theme.cupertinoThemeData == null
+                ? CupertinoThemeData(
+                    primaryColor: this.theme.primaryColor,
+                    barBackgroundColor: this.theme.navigationBarBackgroundColor,
+                    textTheme: CupertinoTextThemeData(
+                        navTitleTextStyle: this.theme.titleStyle))
+                : this.theme.cupertinoThemeData,
+        routes: this.routes);
   }
 }
