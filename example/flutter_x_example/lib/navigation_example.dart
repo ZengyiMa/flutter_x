@@ -9,28 +9,18 @@ class NavigationExample extends StatelessWidget {
     return FXScaffold(
       navigationBar: FXNavigationBar(
         title: "NavigationExample",
-        backgroundColor: Colors.yellow,
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-        ),
+        // backgroundColor: Colors.yellow,
+        // titleTextStyle: TextStyle(
+        //   color: Colors.white,
+        //   fontSize: 16,
+        // ),
         // hiddenBottomEffect: true,
         actions: <Widget>[
            Container(
                 height: 24,
                 padding: EdgeInsets.only(right: 10),
                 child: Center(
-                  child:Text("action 1", style: TextStyle(
-                    color: Colors.white
-                  ))
-                ),
-              ),
-               Container(
-                height: 24,
-                 child: Center(
-                  child:Text("action 1", style: TextStyle(
-                    color: Colors.white
-                  ))
+                  child:Text("action1")
                 ),
               )
         ],
