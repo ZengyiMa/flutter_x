@@ -31,8 +31,7 @@ class FXApp extends BasePlatformStatelessWidget {
                     primaryColor: this.theme.primaryColor,
                     appBarTheme: AppBarTheme(
                         color: this.theme.navigationBarBackgroundColor,
-                        textTheme:
-                            TextTheme(title: this.theme.titleStyle)))
+                        textTheme: TextTheme(title: this.theme.titleStyle)))
                 : this.theme.materialThemeData,
         routes: this.routes);
   }
