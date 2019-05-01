@@ -12,9 +12,12 @@ class SwitchExample extends StatelessWidget {
       ),
       content: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
               XSwitch(
                 value: true,
+                onChanged: (bool value) {
+                },
               )
 
           ],
