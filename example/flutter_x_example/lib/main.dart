@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 // Page
 import 'navigation_example.dart';
+import 'switch_example.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return XApp(
       widget: HomePage(),
-      routes: {"navigation_example": (context) => new NavigationExample()},
+      routes: {
+        "navigation_example": (context) => new NavigationExample(),
+        "switch_example": (context) => new SwitchExample()
+      },
     );
   }
 }
@@ -22,14 +26,16 @@ class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
 
   final List demo = [
-    {"title": "NavigationBar Demo", "pageName": "navigation_example"},
+    {"title": "NavigationBar", "pageName": "navigation_example"},
+    {"title": "Switch", "pageName": "switch_example"},
   ];
 
   @override
   Widget build(BuildContext context) {
     return XScaffold(
         navigationBar: XNavigationBar(title: "Flutter-x Example"),
-        content: ListView.separated(
+        content: 
+        ListView.separated(
           itemCount: demo.length,
           itemBuilder: (BuildContext context, int index) {
             return SizedBox(
