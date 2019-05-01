@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'base_platform_stateless_widget.dart';
 
-typedef ValueChanged<T> = void Function(T value);
-
 class XSwitch extends BasePlatformStatelessWidget {
   const XSwitch({
     Key key,

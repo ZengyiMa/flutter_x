@@ -9,18 +9,12 @@ class NavigationExample extends StatelessWidget {
     return XScaffold(
       navigationBar: XNavigationBar(
         title: "NavigationExample",
-        // backgroundColor: Colors.yellow,
-        // titleTextStyle: TextStyle(
-        //   color: Colors.white,
-        //   fontSize: 16,
-        // ),
-        // hiddenBottomEffect: true,
         actions: <Widget>[
            Container(
                 height: 24,
                 padding: EdgeInsets.only(right: 10),
                 child: Center(
-                  child:Text("action1")
+                  child:Text("action")
                 ),
               )
         ],
