@@ -6,9 +6,9 @@ class BasePlatformStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (FXPlatform.style() == FXAppStyle.material) {
+    if (XPlatform.style() == XAppStyle.material) {
       return materialStyleWidget(context);
-    } else if (FXPlatform.style() == FXAppStyle.cupertino) {
+    } else if (XPlatform.style() == XAppStyle.cupertino) {
       return cupertinoStyleWidget(context);
     } else {
       return null;

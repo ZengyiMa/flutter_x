@@ -1,32 +1,32 @@
 import 'dart:io';
 
-enum FXPlatformType { other, android, iOS }
-enum FXAppStyle { auto, material, cupertino }
+enum XPlatformType { other, android, iOS }
+enum XAppStyle { auto, material, cupertino }
 
-class FXPlatform {
-  static FXAppStyle appStyle;
-  static FXAppStyle style() {
-    if (appStyle == FXAppStyle.material) {
-      return FXAppStyle.material;
-    } else if (appStyle == FXAppStyle.cupertino) {
-      return FXAppStyle.cupertino;
+class XPlatform {
+  static XAppStyle appStyle;
+  static XAppStyle style() {
+    if (appStyle == XAppStyle.material) {
+      return XAppStyle.material;
+    } else if (appStyle == XAppStyle.cupertino) {
+      return XAppStyle.cupertino;
     }
     if (Platform.isAndroid) {
-      return FXAppStyle.material;
+      return XAppStyle.material;
     } else if (Platform.isIOS) {
-      return FXAppStyle.cupertino;
+      return XAppStyle.cupertino;
     } else {
-      return FXAppStyle.auto;
+      return XAppStyle.auto;
     }
   }
 
-  static FXPlatformType platform() {
+  static XPlatformType platform() {
     if (Platform.isAndroid) {
-      return FXPlatformType.android;
+      return XPlatformType.android;
     } else if (Platform.isIOS) {
-      return FXPlatformType.iOS;
+      return XPlatformType.iOS;
     } else {
-      return FXPlatformType.other;
+      return XPlatformType.other;
     }
   }
 }

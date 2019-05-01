@@ -4,11 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'navigationbar.dart';
 import 'base_platform_stateless_widget.dart';
 
-class FXScaffold extends BasePlatformStatelessWidget {
-  const FXScaffold({Key key, this.navigationBar, this.content})
+class XScaffold extends BasePlatformStatelessWidget {
+  const XScaffold({Key key, this.navigationBar, this.content})
       : super(key: key);
 
-  final FXNavigationBar navigationBar;
+  final XNavigationBar navigationBar;
   final Widget content;
 
   @override

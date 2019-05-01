@@ -6,8 +6,8 @@ class NavigationExample extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return FXScaffold(
-      navigationBar: FXNavigationBar(
+    return XScaffold(
+      navigationBar: XNavigationBar(
         title: "NavigationExample",
         // backgroundColor: Colors.yellow,
         // titleTextStyle: TextStyle(

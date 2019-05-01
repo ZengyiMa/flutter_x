@@ -4,8 +4,8 @@ import 'base_platform_stateless_widget.dart';
 
 typedef ValueChanged<T> = void Function(T value);
 
-class FXSwitch extends BasePlatformStatelessWidget {
-  const FXSwitch({
+class XSwitch extends BasePlatformStatelessWidget {
+  const XSwitch({
     Key key,
     this.value,
     this.onChanged

@@ -12,8 +12,8 @@ const Border _kDefaultNavBarBorder = Border(
   ),
 );
 
-class FXNavigationBar extends BasePlatformStatelessWidget {
-  const FXNavigationBar(
+class XNavigationBar extends BasePlatformStatelessWidget {
+  const XNavigationBar(
       {Key key,
       this.title,
       this.titleTextStyle,

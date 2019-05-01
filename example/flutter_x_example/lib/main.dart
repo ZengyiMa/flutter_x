@@ -11,9 +11,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return FXApp(
+    return XApp(
       widget: HomePage(),
-      style: FXAppStyle.auto,
       routes: {"navigation_example": (context) => new NavigationExample()},
     );
   }
@@ -28,8 +27,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FXScaffold(
-        navigationBar: FXNavigationBar(title: "Flutter-x Example"),
+    return XScaffold(
+        navigationBar: XNavigationBar(title: "Flutter-x Example"),
         content: ListView.separated(
           itemCount: demo.length,
           itemBuilder: (BuildContext context, int index) {

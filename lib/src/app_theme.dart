@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
-class FXAppTheme extends Diagnosticable {
-  const FXAppTheme(
+class XAppTheme extends Diagnosticable {
+  const XAppTheme(
       {this.primaryColor,
       this.navigationBarBackgroundColor,
       this.titleStyle,

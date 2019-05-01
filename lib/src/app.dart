@@ -4,21 +4,21 @@ import 'app_theme.dart';
 import 'platform.dart';
 import 'base_platform_stateless_widget.dart';
 
-class FXApp extends BasePlatformStatelessWidget {
-  FXApp(
+class XApp extends BasePlatformStatelessWidget {
+  XApp(
       {Key key,
       this.widget,
       this.theme,
       this.routes,
-      this.style = FXAppStyle.auto})
+      this.style = XAppStyle.auto})
       : super(key: key) {
-    FXPlatform.appStyle = style;
+    XPlatform.appStyle = style;
   }
 
   final Widget widget;
-  final FXAppTheme theme;
+  final XAppTheme theme;
   final Map<String, WidgetBuilder> routes;
-  final FXAppStyle style;
+  final XAppStyle style;
 
   @override
   Widget materialStyleWidget(BuildContext context) {
