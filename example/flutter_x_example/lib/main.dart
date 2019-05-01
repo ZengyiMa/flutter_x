@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return XScaffold(
-        navigationBar: XNavigationBar(title: "Flutter-x Example"),
+        navigationBar: XNavigationBar(title: "Flutter-x Widget Example"),
         content: 
         ListView.separated(
           itemCount: demo.length,

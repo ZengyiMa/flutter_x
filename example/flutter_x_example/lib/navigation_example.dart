@@ -21,7 +21,7 @@ class NavigationExample extends StatelessWidget {
         
       ),
       content: Center(
-        child: Text("NavigationExample"),
+        child: Text("Navigation"),
       ),
     );
   }
