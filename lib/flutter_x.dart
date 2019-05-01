@@ -7,3 +7,4 @@ export 'src/app_theme.dart';
 export 'src/scaffold.dart';
 export 'src/navigationbar.dart';
 export 'src/platform.dart';
+export 'src/switch.dart';
