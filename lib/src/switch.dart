@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'base_platform_mixin.dart';
+import 'mixin/platform_mixin.dart';
 import 'package:flutter/gestures.dart';
 
-class XSwitch extends StatelessWidget with BasePlatformMixin {
+class XSwitch extends StatelessWidget with PlatformMixin {
   XSwitch({
     Key key,
     @required this.value,

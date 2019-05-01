@@ -1,8 +1,8 @@
-import 'platform.dart';
+import '../platform.dart';
 import 'package:flutter/widgets.dart';
 
-class BasePlatformMixin  {
-  
+class PlatformMixin  {
+
   Widget build(BuildContext context) {
     if (XPlatform.style() == XAppStyle.material) {
       return materialStyleWidget(context);

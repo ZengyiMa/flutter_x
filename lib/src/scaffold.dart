@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'navigationbar.dart';
-import 'base_platform_stateless_widget.dart';
+import 'mixin/platform_mixin.dart';
 
-class XScaffold extends BasePlatformStatelessWidget {
+class XScaffold extends StatelessWidget with PlatformMixin {
   const XScaffold({Key key, this.navigationBar, this.content})
       : super(key: key);
 
