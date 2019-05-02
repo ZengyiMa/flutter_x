@@ -8,7 +8,7 @@ class NavigationExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return XScaffold(
       navigationBar: XNavigationBar(
-        title: "NavigationExample",
+        title: "Navigation",
         actions: <Widget>[
            Container(
                 height: 24,
@@ -21,7 +21,7 @@ class NavigationExample extends StatelessWidget {
         
       ),
       content: Center(
-        child: Text("Navigation"),
+        child: Text("NavigationExample"),
       ),
     );
   }

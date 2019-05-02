@@ -10,35 +10,49 @@ class SwitchExample extends StatefulWidget {
   }
 }
 
-
 class _SwitchExampleState extends State<SwitchExample> {
-
   bool switchValue = false;
 
   @override
   Widget build(BuildContext context) {
     return XScaffold(
       navigationBar: XNavigationBar(
-        title: "Swicth",        
+        title: "Swicth",
       ),
       content: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+              Text("Normal: "),
               XSwitch(
                 value: switchValue,
                 onChanged: (bool value) {
-                  this.setState((){
+                  this.setState(() {
                     switchValue = value;
                   });
                 },
               )
-
+            ]),
+            Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+              Text("Disbale - Value is True: "),
+              XSwitch(
+                inactiveTrackColor: Colors.grey,
+                value: true,
+                onChanged: null,
+              )
+            ]),
+            Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+              Text("Disbale - Value is False: "),
+              XSwitch(
+                inactiveTrackColor: Colors.grey,
+                value: false,
+                onChanged: null,
+              )
+            ]),
           ],
         ),
       ),
     );
   }
-
-  
 }
