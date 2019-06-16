@@ -4,17 +4,7 @@
 
 ## flutter_x
 A UI framework for Flutter
-
-## Why are there this project?
-This project is designed to unify the consistency of multi-platform rendering, thus using a set of code to perfectly display on multiple platforms.
-
-## Getting started
-
-
-
-# 中文版本
-
-## flutter_x
+# flutter_x
 Flutter UI 统一框架
 
 ## 为什么有这个项目
