@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 // Page
 import 'navigation_example.dart';
 import 'switch_example.dart';
+import 'button_example.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       widget: HomePage(),
       routes: {
         "navigation_example": (context) => new NavigationExample(),
-        "switch_example": (context) => new SwitchExample()
+        "switch_example": (context) => new SwitchExample(),
+        "button_example":(context) => new ButtonExample(),
       },
     );
   }
@@ -28,6 +30,7 @@ class HomePage extends StatelessWidget {
   final List demo = [
     {"title": "NavigationBar", "pageName": "navigation_example"},
     {"title": "Switch", "pageName": "switch_example"},
+    {"title": "Button", "pageName": "button_example"},
   ];
 
   @override
