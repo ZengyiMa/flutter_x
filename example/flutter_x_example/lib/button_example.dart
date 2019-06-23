@@ -31,6 +31,7 @@ class _ButtonExample extends State<ButtonExample> {
 
                },
                color: Colors.blue,
+               padding: EdgeInsets.all(16),
               )
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
