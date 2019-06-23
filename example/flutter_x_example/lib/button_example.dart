@@ -25,13 +25,12 @@ class _ButtonExample extends State<ButtonExample> {
           children: <Widget>[
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
               Text("Normal: "),
-              XSwitch(
-                value: switchValue,
-                onChanged: (bool value) {
-                  this.setState(() {
-                    switchValue = value;
-                  });
-                },
+              XButton(
+               child: Text("Button Text"),
+               onPressed: () => {
+
+               },
+               color: Colors.blue,
               )
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
