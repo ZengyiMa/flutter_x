@@ -7,15 +7,22 @@ class XButton extends StatelessWidget with PlatformMixin {
     Key key,
     @required this.child,
     @required this.onPressed,
+    this.color,
+    this.disabledColor
   }) : super(key: key);
 
   final Widget child;
   final VoidCallback onPressed;
-
+  final Color color;
+  final Color disabledColor;
 
   @override
   Widget cupertinoStyleWidget(BuildContext context) {
-    return CupertinoButton(child: child, onPressed: this.onPressed,);
+    return CupertinoButton(
+        child: child,
+        onPressed: onPressed,
+        color: color,
+        disabledColor: disabledColor);
   }
 
   @override
