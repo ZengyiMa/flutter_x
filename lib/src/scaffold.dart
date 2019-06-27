@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'navigationbar.dart';
 import 'mixin/platform_mixin.dart';
+import 'platform_data_provider.dart';
 
 class XScaffoldCupertinoWidgetData {}
 
