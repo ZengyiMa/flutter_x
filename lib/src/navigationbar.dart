@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'mixin/platform_mixin.dart';
+import 'platform_data_provider.dart';
 
 const Color _kDefaultNavBarBorderColor = Color(0x4C000000);
 
