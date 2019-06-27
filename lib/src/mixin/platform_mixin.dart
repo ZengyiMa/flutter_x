@@ -1,7 +1,19 @@
 import '../platform.dart';
 import 'package:flutter/widgets.dart';
 
-class PlatformMixin  {
+class PlatformDataProvider<C, M> {
+  C cupertinoWidgetData;
+  M materialWidgetData;
+}
+
+class PlatformMixin<C, M> {
+
+  final PlatformDataProvider<C, M> dataProvider = new PlatformDataProvider();
+
+  void inititalPlatformDataProvider(PlatformDataProvider<C, M> provider) {
+      this.dataProvider.cupertinoWidgetData = provider.cupertinoWidgetData ?? null;
+      this.dataProvider.materialWidgetData = provider.materialWidgetData ?? null;
+  }
 
   Widget build(BuildContext context) {
     if (XPlatform.style() == XAppStyle.material) {
