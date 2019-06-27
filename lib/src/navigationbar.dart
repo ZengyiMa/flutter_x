@@ -12,16 +12,29 @@ const Border _kDefaultNavBarBorder = Border(
   ),
 );
 
-class XNavigationBar extends StatelessWidget with PlatformMixin {
-  const XNavigationBar(
+
+class XNavigationBarCupertinoWidgetData {
+
+}
+
+class XNavigationBarMaterialWidgetData {
+
+}
+
+class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCupertinoWidgetData, XNavigationBarMaterialWidgetData> {
+  XNavigationBar(
       {Key key,
       this.title,
       this.titleTextStyle,
       this.leading,
       this.actions,
       this.backgroundColor,
-      this.hiddenBottomEffect})
-      : super(key: key);
+      this.hiddenBottomEffect, 
+      PlatformDataProvider<XNavigationBarCupertinoWidgetData, XNavigationBarMaterialWidgetData> dataProvider
+      })
+      : super(key: key) {
+        inititalPlatformDataProvider(dataProvider);
+      }
 
   final String title;
   final TextStyle titleTextStyle;
