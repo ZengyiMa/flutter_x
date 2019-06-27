@@ -4,9 +4,23 @@ import 'package:flutter/cupertino.dart';
 import 'navigationbar.dart';
 import 'mixin/platform_mixin.dart';
 
-class XScaffold extends StatelessWidget with PlatformMixin {
-  const XScaffold({Key key, this.navigationBar, this.content})
-      : super(key: key);
+
+class XScaffoldiOSStyle {
+  
+}
+
+class XScaffoldAndroidStyle {
+
+}
+
+
+
+class XScaffold extends StatelessWidget with PlatformMixin<XScaffoldiOSStyle, XScaffoldAndroidStyle> {
+
+  XScaffold({Key key, this.navigationBar, this.content, PlatformDataProvider dataProvider})
+      : super(key: key) {
+        inititalPlatformDataProvider(dataProvider);
+      }
 
   final XNavigationBar navigationBar;
   final Widget content;
@@ -21,6 +35,7 @@ class XScaffold extends StatelessWidget with PlatformMixin {
 
   @override
   Widget cupertinoStyleWidget(BuildContext context) {
+
     return CupertinoPageScaffold(
       navigationBar: navigationBar.build(context),
       child: content,
