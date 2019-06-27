@@ -1,10 +1,7 @@
 import '../platform.dart';
 import 'package:flutter/widgets.dart';
+import '../platform_data_provider.dart';
 
-class PlatformDataProvider<C, M> {
-  C cupertinoWidgetData;
-  M materialWidgetData;
-}
 
 class PlatformMixin<C, M> {
 
