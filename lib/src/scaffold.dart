@@ -5,20 +5,20 @@ import 'navigationbar.dart';
 import 'mixin/platform_mixin.dart';
 import 'platform_data_provider.dart';
 
-class XScaffoldCupertinoWidgetData {}
+class XScaffoldCupertinoData {}
 
-class XScaffoldMaterialWidgetData {}
+class XScaffoldMaterialData {}
 
 class XScaffold extends StatelessWidget
     with
-        PlatformMixin<XScaffoldCupertinoWidgetData,
-            XScaffoldMaterialWidgetData> {
+        PlatformMixin<XScaffoldCupertinoData,
+            XScaffoldMaterialData> {
   XScaffold(
       {Key key,
       this.navigationBar,
       this.content,
-      PlatformDataProvider<XScaffoldCupertinoWidgetData,
-              XScaffoldMaterialWidgetData>
+      PlatformDataProvider<XScaffoldCupertinoData,
+              XScaffoldMaterialData>
           dataProvider})
       : super(key: key) {
     inititalPlatformDataProvider(dataProvider);
