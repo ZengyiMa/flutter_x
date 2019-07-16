@@ -14,15 +14,15 @@ const Border _kDefaultNavBarBorder = Border(
 );
 
 
-class XNavigationBarCupertinoWidgetData {
+class XNavigationBarCupertinoData {
 
 }
 
-class XNavigationBarMaterialWidgetData {
+class XNavigationBarMaterialData {
 
 }
 
-class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCupertinoWidgetData, XNavigationBarMaterialWidgetData> {
+class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCupertinoData, XNavigationBarMaterialData> {
   XNavigationBar(
       {Key key,
       this.title,
@@ -31,7 +31,7 @@ class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCu
       this.actions,
       this.backgroundColor,
       this.hiddenBottomEffect, 
-      PlatformDataProvider<XNavigationBarCupertinoWidgetData, XNavigationBarMaterialWidgetData> dataProvider
+      PlatformDataProvider<XNavigationBarCupertinoData, XNavigationBarMaterialData> dataProvider
       })
       : super(key: key) {
         inititalPlatformDataProvider(dataProvider);
