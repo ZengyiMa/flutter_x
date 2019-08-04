@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'mixin/platform_mixin.dart';
-import 'platform_data_provider.dart';
 
+class XButtonCupertinoData {}
 
-class XButtonCupertinoData {
-  
-}
+class XButtonmaterialData {}
 
-class XButtonmaterialData {
-  
-}
-
-
-class XButton extends StatelessWidget with PlatformMixin<XButtonCupertinoData, XButtonmaterialData> {
-  XButton(
-      {Key key,
-      @required this.child,
-      @required this.onPressed,
-      this.color,
-      this.disabledColor,
-      this.padding,
-      PlatformDataProvider<XButtonCupertinoData, XButtonmaterialData> dataProvider
-      })
-      : super(key: key) {
-        inititalPlatformDataProvider(dataProvider);
-      }
+class XButton extends StatelessWidget with PlatformMixin {
+  XButton({
+    Key key,
+    @required this.child,
+    @required this.onPressed,
+    this.color,
+    this.disabledColor,
+    this.padding,
+  });
 
   final Widget child;
   final VoidCallback onPressed;

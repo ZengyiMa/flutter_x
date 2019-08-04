@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'mixin/platform_mixin.dart';
-import 'platform_data_provider.dart';
 
 const Color _kDefaultNavBarBorderColor = Color(0x4C000000);
 
@@ -22,7 +21,7 @@ class XNavigationBarMaterialData {
 
 }
 
-class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCupertinoData, XNavigationBarMaterialData> {
+class XNavigationBar extends StatelessWidget with PlatformMixin {
   XNavigationBar(
       {Key key,
       this.title,
@@ -31,11 +30,7 @@ class XNavigationBar extends StatelessWidget with PlatformMixin<XNavigationBarCu
       this.actions,
       this.backgroundColor,
       this.hiddenBottomEffect, 
-      PlatformDataProvider<XNavigationBarCupertinoData, XNavigationBarMaterialData> dataProvider
-      })
-      : super(key: key) {
-        inititalPlatformDataProvider(dataProvider);
-      }
+      });
 
   final String title;
   final TextStyle titleTextStyle;
