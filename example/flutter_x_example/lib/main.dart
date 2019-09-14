@@ -36,6 +36,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return XScaffold(
         navigationBar: XNavigationBar(title: "Flutter-x Widget Example"),
         content: 
