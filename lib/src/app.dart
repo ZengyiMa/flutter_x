@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_x/src/base/x_stateless_widget.dart';
 import 'app_theme.dart';
 import 'platform.dart';
 import 'mixin/platform_mixin.dart';
 
-class XApp extends StatelessWidget with PlatformMixin{
+class XApp extends XStatelessWidget with PlatformMixin{
   XApp(
       {Key key,
       this.widget,
       this.theme,
       this.routes,
       this.style = XAppStyle.auto})
-      : super(key: key) {
+      : super(key) {
     XPlatform.appStyle = style;
   }
 

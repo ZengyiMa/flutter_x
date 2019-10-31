@@ -1,30 +1,23 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_x/src/base/x_stateless_widget.dart';
 import 'navigationbar.dart';
 import 'mixin/platform_mixin.dart';
-import 'mixin/cupertino_data_mixin.dart';
-import 'mixin/material_data_mixin.dart';
 
 class XScaffoldCupertinoData {}
 
 class XScaffoldMaterialData {}
 
-class XScaffold extends StatelessWidget
-    with
-        PlatformMixin,
-        CupertinoDataMixin<XScaffoldCupertinoData>,
-        MaterialDataMixin<XScaffoldMaterialData> {
+class XScaffold extends XStatelessWidget with PlatformMixin {
+       
   XScaffold({
     Key key,
     this.navigationBar,
     this.content,
     XScaffoldCupertinoData cupertinoData,
     XScaffoldMaterialData materialData,
-  }) : super(key: key) {
-    this.cupertinoWidgetData = cupertinoData;
-    this.materialWidgetData = materialData;
-  }
+  }) : super(key, material: materialData, cupertino: cupertinoData);
 
   final XNavigationBar navigationBar;
   final Widget content;
