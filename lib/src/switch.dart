@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_x/src/base/x_stateless_widget.dart';
-import 'mixin/platform_mixin.dart';
+import 'base/stateless_widget.dart';
 import 'package:flutter/gestures.dart';
+import 'package:meta/meta.dart';
 
-class XSwitch extends XStatelessWidget with PlatformMixin {
+class XSwitch extends XStatelessWidget {
   XSwitch({
     Key key,
     @required this.value,

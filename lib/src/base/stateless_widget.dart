@@ -1,8 +1,17 @@
-import '../platform.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_x/flutter_x.dart';
 
-
-class PlatformMixin {
+class XStatelessWidget<M, C> extends StatelessWidget {
+   final M material;
+   final C cupertino;
+   const XStatelessWidget(
+     Key key, 
+     {
+       this.material,
+       this.cupertino,
+     }
+   );
+   
+  @override
   Widget build(BuildContext context) {
     if (XPlatform.style() == XAppStyle.material) {
       return materialStyleWidget(context);

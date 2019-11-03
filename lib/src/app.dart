@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_x/src/base/x_stateless_widget.dart';
+import 'base/stateless_widget.dart';
 import 'app_theme.dart';
 import 'platform.dart';
-import 'mixin/platform_mixin.dart';
 
-class XApp extends XStatelessWidget with PlatformMixin{
+class XApp extends XStatelessWidget {
   XApp(
       {Key key,
       this.widget,
