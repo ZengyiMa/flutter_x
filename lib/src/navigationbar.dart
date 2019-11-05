@@ -21,7 +21,7 @@ class XNavigationBarMaterialData {
 
 }
 
-class XNavigationBar extends XStatelessWidget {
+class XNavigationBar extends XStatelessWidget<XNavigationBarMaterialData, XNavigationBarCupertinoData> {
   XNavigationBar(
       {Key key,
       this.title,
