@@ -17,7 +17,7 @@ class XButtonCupertinoData {
   final BorderRadius borderRadius;
 }
 
-class XButtonmaterialData {
+class XButtonMaterialData {
   const XButtonmaterialData({
     this.onHighlightChanged,
     this.textTheme,
@@ -67,7 +67,7 @@ class XButtonmaterialData {
   final double height;
 }
 
-class XButton extends XStatelessWidget {
+class XButton extends XStatelessWidget<XButtonMaterialData, XButtonCupertinoData> {
   const XButton({
     Key key,
     @required this.child,
@@ -76,7 +76,7 @@ class XButton extends XStatelessWidget {
     this.disabledColor,
     this.padding,
     XButtonCupertinoData cupertinoData,
-    XButtonCupertinoData materialData,
+    XButtonMaterialData materialData,
   }) : super(key, material: materialData, cupertino: cupertinoData);
 
   final Widget child;
@@ -93,6 +93,9 @@ class XButton extends XStatelessWidget {
       color: color,
       disabledColor: disabledColor,
       padding: padding,
+      borderRadius: this.cupertino?.borderRadius,
+      pressedOpacity: this.cupertino?.pressedOpacity,
+      minSize: this.cupertino?.minSize,
     );
   }
 
@@ -104,6 +107,25 @@ class XButton extends XStatelessWidget {
       color: color,
       disabledColor: disabledColor,
       padding: padding,
+      onHighlightChanged: this.material?.onHighlightChanged,
+      textColor: this.material?.textColor,
+      textTheme: this.material?.textTheme,
+      focusColor: this.material?.focusColor,
+      hoverColor: this.material?.hoverColor,
+      highlightColor: this.material?.highlightColor,
+      splashColor: this.material?.splashColor,
+      colorBrightness: this.material?.colorBrightness,
+      elevation: this.material?.elevation,
+      focusElevation: this.material?.focusElevation,
+      hoverElevation: this.material?.hoverElevation,
+      highlightElevation: this.material?.highlightElevation,
+      disabledElevation: this.material?.disabledElevation,
+      shape: this.material?.shape,
+      clipBehavior: this.material?.clipBehavior,
+      focusNode: this.material?.focusNode,
+      autofocus: this.material?.autofocus,
+      materialTapTargetSize: this.material?.materialTapTargetSize,
+      animationDuration: this.material?.animationDuration
     );
   }
 }
