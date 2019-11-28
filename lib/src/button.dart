@@ -18,7 +18,7 @@ class XButtonCupertinoData {
 }
 
 class XButtonMaterialData {
-  const XButtonmaterialData({
+  const XButtonMaterialData({
     this.onHighlightChanged,
     this.textTheme,
     this.textColor,

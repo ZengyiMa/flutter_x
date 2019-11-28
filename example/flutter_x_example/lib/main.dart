@@ -18,62 +18,46 @@ class MyApp extends StatelessWidget {
       routes: {
         "navigation_example": (context) => new NavigationExample(),
         "switch_example": (context) => new SwitchExample(),
-        "button_example":(context) => new ButtonExample(),
+        "button_example": (context) => new ButtonExample(),
       },
     );
   }
 }
 
-
 class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
 
-  final List demo = [
-    {"title": "NavigationBar", "pageName": "navigation_example"},
-    {"title": "Switch", "pageName": "switch_example"},
-    {"title": "Button", "pageName": "button_example"},
-  ];
-
   @override
   Widget build(BuildContext context) {
-    
     return XScaffold(
-        navigationBar: XNavigationBar(title: "Flutter-x Widget Example"),
-        content: 
-        ListView.separated(
-          itemCount: demo.length,
-          itemBuilder: (BuildContext context, int index) {
-            return SizedBox(
-                height: 44.0,
-                child: GestureDetector(
+        navigationBar: XNavigationBar(title: "FlutterX Widget Example"),
+        content: GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, //横轴三个子widget
+                childAspectRatio: 1.0 //宽高比为1时，子widget
+                ),
+            children: <Widget>[
+              GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, demo[index]["pageName"]);
+                    Navigator.pushNamed(context, "navigation_example");
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.fromLTRB(16, 10, 16, 5),
-                        child: Text(demo[index]["title"]),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(0, 10, 8, 5),
-                        child: Icon(
-                          CupertinoIcons.forward,
-                          color: Color(0xFFC7C7CC),
-                          size: 21.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ));
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return Divider(
-              indent: 16,
-              color: CupertinoColors.inactiveGray,
-            );
-          },
-        ));
+                  child: Column(children: <Widget>[
+                    Text("Navigation")
+                  ])),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "button_example");
+                  },
+                  child: Column(children: <Widget>[
+                    Text("Button")
+                  ])),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "switch_example");
+                  },
+                  child: Column(children: <Widget>[
+                    Text("Switch")
+                  ])),
+            ]));
   }
 }
