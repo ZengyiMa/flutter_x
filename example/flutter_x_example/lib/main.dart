@@ -31,33 +31,33 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return XScaffold(
         navigationBar: XNavigationBar(title: "FlutterX Widget Example"),
-        content: GridView(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, //横轴三个子widget
-                childAspectRatio: 1.0 //宽高比为1时，子widget
-                ),
-            children: <Widget>[
-              GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, "navigation_example");
-                  },
-                  child: Column(children: <Widget>[
-                    Text("Navigation")
-                  ])),
-              GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, "button_example");
-                  },
-                  child: Column(children: <Widget>[
-                    Text("Button")
-                  ])),
-              GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, "switch_example");
-                  },
-                  child: Column(children: <Widget>[
-                    Text("Switch")
-                  ])),
-            ]));
+        content: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.fromLTRB(16, 88, 16, 64),
+          children: <Widget>[
+            Container(
+                padding: EdgeInsets.all(40),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                  Text('Flutter UI',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff000000))),
+                  Container(
+                     margin: EdgeInsets.only(top: 4),
+                      child: Text(
+                          'Flutter UI 基于 Flutter 多端一致性的 UI 框架，在多个平台上带来一致性的体验',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w300,
+                              color: Color(0x80000000))))
+                ])),
+            const Text('Domestic life was never quite my style'),
+            const Text('When you smile, you knock me out, I fall apart'),
+            const Text('And I thought I was so smart'),
+          ],
+        ));
   }
 }
