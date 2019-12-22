@@ -1,4 +1,4 @@
-name: flutter_x_example
+name: flutter_x_ui_example
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -24,8 +24,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
-  flutter_x:
-    path: ../../
+  flutter_x_ui:
+    path: ../../lib/flutter_x_ui
 
 dev_dependencies:
   flutter_test:
@@ -37,7 +37,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,4 +1,5 @@
-import 'package:flutter_x/flutter_x.dart';
+import 'package:flutter/widgets.dart';
+import '../platform.dart';
 
 class XStatelessWidget<M, C> extends StatelessWidget {
    final M material;

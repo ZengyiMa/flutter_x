@@ -1,5 +1,5 @@
-name: flutter_x
-description: A UI framework for Flutter
+name: flutter_x_ui
+description: A UI framework for Flutter X
 version: 0.0.1
 author: damien
 homepage: https://github.com/ZengyiMa/flutter_x
@@ -10,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_x_ui:
-    path: lib/flutter_x_ui
 
 dev_dependencies:
   flutter_test:
