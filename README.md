@@ -4,13 +4,11 @@
 
 ## flutter_x
 A UI framework for Flutter
-# flutter_x
-Flutter UI 统一框架
+# flutter_x 项目
+Flutter 是一个跨平台渲染框架，能做到很强的一致性。但是又过于一致，一个Widget多端都是一个风格和交互。
 
-## 为什么有这个项目
-该项目旨在统一多平台渲染的一致性，从而使用一套代码在多个平台上完美显示。
 
-## 如何开始
+
 
 
 
