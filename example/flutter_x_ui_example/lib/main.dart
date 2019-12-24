@@ -6,6 +6,7 @@ import 'package:flutter_x_ui/flutter_x_ui.dart';
 import 'navigation_example.dart';
 import 'switch_example.dart';
 import 'button_example.dart';
+import 'scaffold_example.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         "navigation_example": (context) => new NavigationExample(),
         "switch_example": (context) => new SwitchExample(),
         "button_example": (context) => new ButtonExample(),
+        "scaffold_example":(context) => new ScaffoldExample(),
       },
     );
   }
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
 
-  final List demo = [
+  final List pages = [
+    {"title": "Scaffold", "pageName":"scaffold_example"},
     {"title": "NavigationBar", "pageName": "navigation_example"},
     {"title": "Switch", "pageName": "switch_example"},
     {"title": "Button", "pageName": "button_example"},
@@ -58,13 +61,13 @@ class HomePage extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(top: 4),
                   child: Text(
-                      'Flutter-x UI 基于 Flutter 多端一致性的 UI 框架，一份代码在多个平台上带来一致性又具有平台特色的体验',
+                      'Flutter X UI 基于 Flutter 多端一致性的 UI 框架，一份代码在多个平台上带来一致性又具有平台特色的体验',
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w300,
                           color: Color(0x80000000))))
             ])));
-    for (var item in demo) {
+    for (var item in pages) {
       list.add(
         GestureDetector(
             onTap: () {
