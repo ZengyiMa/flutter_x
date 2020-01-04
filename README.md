@@ -1,10 +1,23 @@
-# flutter_x 
-Flutter X 是基于 Flutter 封装的效率框架，有几个子模块
+# Flutter
+Flutter 是 Google推出并开源的移动应用软件开发工具包，用于为Android、iOS、 Windows、Mac、Linux、Google Fuchsia开发应用。主打跨平台、高保真、高性能。
+
+
+# Flutter-x
+Flutter-x 是基于 Flutter 上构建效率框架，其中包含几个模块
 
 ## flutter_x_ui
-flutter_x_ui 基于 Flutter 的多端一致性的 UI 框架，一份代码在多个平台上带来一致性又具有平台特色的体验。
+flutter_x_ui 基于 Flutter 的多端一致性的 UI 框架，一份代码在多个平台上使用一份代码又带来平台特色的 UI 工具包。
 
-在使用之前，如果需要适配Android和iOS你需要这么做
+包含组件：
+
+- [ ] AppTheme
+- [ ] App
+- [ ] Scaffold
+- [ ] NavigationBar
+- [ ] Switch
+- [ ] Button
+
+
 
 
 
