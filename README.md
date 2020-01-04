@@ -10,12 +10,12 @@ flutter_x_ui 基于 Flutter 的多端一致性的 UI 框架，一份代码在多
 
 包含组件：
 
-- [ ] AppTheme
-- [ ] App
-- [ ] Scaffold
-- [ ] NavigationBar
-- [ ] Switch
-- [ ] Button
+- [x] AppTheme
+- [x] App
+- [x] Scaffold
+- [x] NavigationBar
+- [x] Switch
+- [x] Button
 
 
 
