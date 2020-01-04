@@ -9,3 +9,4 @@ export 'navigationbar.dart';
 export 'platform.dart';
 export 'switch.dart';
 export 'button.dart';
+export 'slider.dart';
