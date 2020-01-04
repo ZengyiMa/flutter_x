@@ -16,7 +16,7 @@ flutter_x_ui 基于 Flutter 的多端一致性的 UI 框架，一份代码在多
 - [x] NavigationBar
 - [x] Switch
 - [x] Button
-- [ ] Slider
+- [x] Slider
 - [ ] TextField
 - [ ] IconButton
 - [ ] AppBar
